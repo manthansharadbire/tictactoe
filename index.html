@@ -12,6 +12,11 @@
 }
 .current-player{
     text-align: center;
+    background-color: #e0dcdc;
+    padding: 10px 15px;
+    width: fit-content;
+    margin: 1px auto;
+    border-radius: 10px;
 }
 body{
     background-color: rgb(2, 118, 2);
@@ -38,9 +43,25 @@ body{
 .board{
     background-color: rgb(1, 56, 1);
     width: fit-content;
-    margin: 60px auto;
+    margin: 30px auto;
     border: 2px solid rgb(1, 56, 1);
 
+}
+
+.reset-btn-container{
+    padding: 10px 10px;
+    display: flex;
+}
+.reset-btn{
+    margin: 1px auto;
+    padding:10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.reset-btn:hover{
+    transition: 0.3s;
+    transform: scale(1.04);
 }
 
 </style>
@@ -67,8 +88,10 @@ body{
 <div class="box" onclick="selectBox(7)">7</div>
 <div class="box" onclick="selectBox(8)">8</div>
 </div>
-
 </div>
+<div class="reset-btn-container">
+    <button class="reset-btn" id="resetbtn" onclick="resetBoard()">Reset Game</button>
+    </div>
 
 <script>
 const board =[-1, -1, -1, -1, -1, -1, -1, -1, -1];
@@ -104,6 +127,15 @@ if (currentPlayer === "X"){
 
 const currentPlayerElement = document.getElementById("currentPlayer");
 currentPlayerElement.innerText = currentPlayer;
+}
+
+function resetBoard(){
+    board.fill(-1);
+    renderBoard();
+
+    currentPlayer = "X";
+    const currentPlayerElement = document.getElementById("currentPlayer");
+    currentPlayerElement.innerText = currentPlayer;
 }
 
 </script>
