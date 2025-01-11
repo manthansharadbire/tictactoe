@@ -85,25 +85,25 @@ else if(isPlayerPresent([2,4,6], "🏏")){
 if (isPlayerPresent([0,1,2], "🏀")){
     alert("Player 🏀 wins");
 }
-else if(isPlayerPresent([3,4,5], "O")){
+else if(isPlayerPresent([3,4,5], "🏀")){
     alert("Player 🏀 wins");
 }
-else if(isPlayerPresent([6,7,8], "O")){
+else if(isPlayerPresent([6,7,8], "🏀")){
     alert("Player 🏀 wins");
 }
-else if(isPlayerPresent([0,3,6], "O")){
+else if(isPlayerPresent([0,3,6], "🏀")){
     alert("Player 🏀 wins");
 }
-else if(isPlayerPresent([1,4,7], "O")){
+else if(isPlayerPresent([1,4,7], "🏀")){
     alert("Player 🏀 wins");
 }
-else if(isPlayerPresent([2,5,8], "O")){
+else if(isPlayerPresent([2,5,8], "🏀")){
     alert("Player 🏀 wins");
 }
-else if(isPlayerPresent([0,4,8], "O")){
+else if(isPlayerPresent([0,4,8], "🏀")){
     alert("Player 🏀 wins");
 }
-else if(isPlayerPresent([2,4,6], "O")){
+else if(isPlayerPresent([2,4,6], "🏀")){
     alert("Player 🏀 wins");
 }
 
