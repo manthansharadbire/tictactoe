@@ -69,7 +69,7 @@ body{
 <body>
 <h1 class="heading">Tic-Tac-Toe</h1>
 <p class="current-player">Current Player: <span id="currentPlayer"> X </span></p>
-<div class="board">
+<div class="board" onclick="checkForWinner()">
 
 <div class="row">
 <div class="box" onclick="selectBox(0)">0</div>
@@ -138,6 +138,31 @@ function resetBoard(){
     currentPlayerElement.innerText = currentPlayer;
 }
 
+function checkForWinner(){
+if (isPlayerPresent([0,1,2], "X")){
+    alert("Player 🏏 wins");
+}
+else if(isPlayerPresent([3,4,5], "X")){
+    alert("Player 🏏 wins");
+}
+else if(isPlayerPresent([6,7,8], "X")){
+    alert("Player 🏏 wins");
+}
+else if(isPlayerPresent([0,3,6], "X")){
+    alert("Player 🏏 wins");
+}
+else if(isPlayerPresent([1,4,7], "X")){
+    alert("Player 🏏 wins");
+}
+else if(isPlayerPresent([2,5,8], "X")){
+    alert("Player 🏏 wins");
+}
+else if(isPlayerPresent([0,4,8], "X")){
+    alert("Player 🏏 wins");
+}
+else if(isPlayerPresent([2,4,6], "X")){
+    alert("Player 🏏 wins");
+}
 </script>
 </body>
 </html>
