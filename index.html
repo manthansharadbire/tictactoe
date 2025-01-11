@@ -10,6 +10,9 @@
     color: aliceblue;
     font-size: 50px;
 }
+.current-player{
+    text-align: center;
+}
 body{
     background-color: rgb(2, 118, 2);
 }
@@ -21,6 +24,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.box:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(0.9);
 }
 
 .row{
@@ -39,30 +47,32 @@ body{
 </head>
 <body>
 <h1 class="heading">Tic-Tac-Toe</h1>
+<p class="current-player">Current Player: <span id="currentPlayer"> X </span></p>
 <div class="board">
 
 <div class="row">
-<div class="box">0</div>
-<div class="box">1</div>
-<div class="box">2</div>
+<div class="box" onclick="selectBox(0)">0</div>
+<div class="box" onclick="selectBox(1)">1</div>
+<div class="box" onclick="selectBox(2)">2</div>
 </div>
 
 <div class="row">
-<div class="box">3</div>
-<div class="box">4</div>
-<div class="box">5</div>
+<div class="box" onclick="selectBox(3)">3</div>
+<div class="box" onclick="selectBox(4)">4</div>
+<div class="box" onclick="selectBox(5)">5</div>
 </div>
 
 <div class="row">
-<div class="box">6</div>
-<div class="box">7</div>
-<div class="box">8</div>
+<div class="box" onclick="selectBox(6)">6</div>
+<div class="box" onclick="selectBox(7)">7</div>
+<div class="box" onclick="selectBox(8)">8</div>
 </div>
 
 </div>
 
 <script>
-const board =[-1, -1, 'O', 'X', -1, -1, -1, -1, -1];
+const board =[-1, -1, -1, -1, -1, -1, -1, -1, -1];
+let currentPlayer = 'X';
 function renderBoard(){
 const allBoxes = document.querySelectorAll('.box');
 allBoxes.forEach((boxElement, i)=>{
@@ -78,6 +88,24 @@ boxElement.innerHTML = '';
 })
 }
 renderBoard();
+
+function selectBox(boxNumber){
+    if (board[boxNumber] !== -1){
+        alert('Invalid Move')
+        return;
+    }
+board[boxNumber] = currentPlayer;
+renderBoard();
+if (currentPlayer === "X"){
+    currentPlayer = "O";
+} else {
+    currentPlayer = "X";
+}
+
+const currentPlayerElement = document.getElementById("currentPlayer");
+currentPlayerElement.innerText = currentPlayer;
+}
+
 </script>
 </body>
 </html>
