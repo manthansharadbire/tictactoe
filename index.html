@@ -68,7 +68,7 @@ body{
 </head>
 <body>
 <h1 class="heading">Tic-Tac-Toe</h1>
-<p class="current-player">Current Player: <span id="currentPlayer"> X </span></p>
+<p class="current-player">Current Player: <span id="currentPlayer"> 🏏 </span></p>
 <div class="board" onclick="checkForWinner()">
 
 <div class="row">
@@ -95,14 +95,14 @@ body{
 
 <script>
 const board =[-1, -1, -1, -1, -1, -1, -1, -1, -1];
-let currentPlayer = 'X';
+let currentPlayer = '🏏';
 function renderBoard(){
 const allBoxes = document.querySelectorAll('.box');
 allBoxes.forEach((boxElement, i)=>{
-if(board[i]=='X'){
+if(board[i]=='🏏'){
 boxElement.innerHTML = '<img src="player1.png" height="80px"/>';
 }
-else if(board[i]=='O'){
+else if(board[i]=='🏀'){
 boxElement.innerHTML = '<img src="player2.png" height="70px"/>';
 }
 else{
@@ -119,10 +119,10 @@ function selectBox(boxNumber){
     }
 board[boxNumber] = currentPlayer;
 renderBoard();
-if (currentPlayer === "X"){
-    currentPlayer = "O";
+if (currentPlayer === "🏏"){
+    currentPlayer = "🏀";
 } else {
-    currentPlayer = "X";
+    currentPlayer = "🏏";
 }
 
 const currentPlayerElement = document.getElementById("currentPlayer");
@@ -133,35 +133,61 @@ function resetBoard(){
     board.fill(-1);
     renderBoard();
 
-    currentPlayer = "X";
+    currentPlayer = "🏏";
     const currentPlayerElement = document.getElementById("currentPlayer");
     currentPlayerElement.innerText = currentPlayer;
 }
 
 function checkForWinner(){
-if (isPlayerPresent([0,1,2], "X")){
+if (isPlayerPresent([0,1,2], "🏏")){
     alert("Player 🏏 wins");
 }
-else if(isPlayerPresent([3,4,5], "X")){
+else if(isPlayerPresent([3,4,5], "🏏")){
     alert("Player 🏏 wins");
 }
-else if(isPlayerPresent([6,7,8], "X")){
+else if(isPlayerPresent([6,7,8], "🏏")){
     alert("Player 🏏 wins");
 }
-else if(isPlayerPresent([0,3,6], "X")){
+else if(isPlayerPresent([0,3,6], "🏏")){
     alert("Player 🏏 wins");
 }
-else if(isPlayerPresent([1,4,7], "X")){
+else if(isPlayerPresent([1,4,7], "🏏")){
     alert("Player 🏏 wins");
 }
-else if(isPlayerPresent([2,5,8], "X")){
+else if(isPlayerPresent([2,5,8], "🏏")){
     alert("Player 🏏 wins");
 }
-else if(isPlayerPresent([0,4,8], "X")){
+else if(isPlayerPresent([0,4,8], "🏏")){
     alert("Player 🏏 wins");
 }
-else if(isPlayerPresent([2,4,6], "X")){
+else if(isPlayerPresent([2,4,6], "🏏")){
     alert("Player 🏏 wins");
+}
+
+if (isPlayerPresent([0,1,2], "🏀")){
+    alert("Player 🏀 wins");
+}
+else if(isPlayerPresent([3,4,5], "O")){
+    alert("Player 🏀 wins");
+}
+else if(isPlayerPresent([6,7,8], "O")){
+    alert("Player 🏀 wins");
+}
+else if(isPlayerPresent([0,3,6], "O")){
+    alert("Player 🏀 wins");
+}
+else if(isPlayerPresent([1,4,7], "O")){
+    alert("Player 🏀 wins");
+}
+else if(isPlayerPresent([2,5,8], "O")){
+    alert("Player 🏀 wins");
+}
+else if(isPlayerPresent([0,4,8], "O")){
+    alert("Player 🏀 wins");
+}
+else if(isPlayerPresent([2,4,6], "O")){
+    alert("Player 🏀 wins");
+}
 }
 </script>
 </body>
