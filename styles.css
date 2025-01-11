@@ -1,0 +1,58 @@
+.heading{
+    text-align: center;
+    color: aliceblue;
+    font-size: 50px;
+}
+.current-player{
+    text-align: center;
+    background-color: #e0dcdc;
+    padding: 10px 15px;
+    width: fit-content;
+    margin: 1px auto;
+    border-radius: 10px;
+}
+body{
+    background-color: rgb(2, 118, 2);
+}
+.box{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(195, 200, 188);
+    margin: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(0.9);
+}
+
+.row{
+    display: flex;
+}
+
+.board{
+    background-color: rgb(1, 56, 1);
+    width: fit-content;
+    margin: 30px auto;
+    border: 2px solid rgb(1, 56, 1);
+}
+
+.reset-btn-container{
+    padding: 10px 10px;
+    display: flex;
+}
+.reset-btn{
+    margin: 1px auto;
+    padding:10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.reset-btn:hover{
+    transition: 0.3s;
+    transform: scale(1.04);
+}
+
